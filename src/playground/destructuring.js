@@ -1,4 +1,4 @@
-console.log('Destructuring!')
+console.log("Destructuring!");
 
 // const person = {
 //     name: 'Abiola',
@@ -9,7 +9,7 @@ console.log('Destructuring!')
 //     }
 // }
 
-// const { name, age } = person 
+// const { name, age } = person
 
 // console.log(`${name} is ${age} years old`)
 
@@ -26,14 +26,14 @@ console.log('Destructuring!')
 
 //array destructuring
 
-const address = ['Block 3', 'Flat 4', 'Millenium estate', 'Lagos']
+const address = ["Block 3", "Flat 4", "Millenium estate", "Lagos"];
 
-const [, , estate = 'Victoria Crest', state] = address;
+const [, , estate = "Victoria Crest", state] = address;
 
-console.log(`You are in ${estate}, ${state}, Nigeria`)
+console.log(`You are in ${estate}, ${state}, Nigeria`);
 
-const item = ['Coffee (hot)', '$2.00', '$2.50', '$2.75']
+const item = ["Coffee (hot)", "$2.00", "$2.50", "$2.75"];
 
-const [actualItem, , medium] = item 
+const [actualItem, , medium] = item;
 
-console.log(`A medium ${actualItem} cost ${medium}`)
+console.log(`A medium ${actualItem} cost ${medium}`);
