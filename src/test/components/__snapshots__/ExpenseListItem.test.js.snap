@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render individual enpense 1`] = `
+<div>
+  <Link
+    to="/edit/3"
+  >
+    <h3>
+      Cream Soda
+    </h3>
+  </Link>
+  <p>
+    150
+     - 
+    -345600000
+  </p>
+</div>
+`;
