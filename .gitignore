@@ -1,7 +1,4 @@
 node_modules/
-public/bundle.js
-public/styles.css
-public/styles.css.map
-public/bundle.js.map
+public/dist/
 package-lock.json
 
