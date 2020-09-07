@@ -10,7 +10,7 @@ exports[`should render individual enpense 1`] = `
     </h3>
   </Link>
   <p>
-    ₦1,50
+    ₦1.50
     -
     December 28th, 1969
   </p>
