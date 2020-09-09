@@ -9,9 +9,9 @@ import { setTextFilter } from "./actions/filters";
 import "react-dates/lib/css/_datepicker.css";
 import "normalize.css/normalize.css";
 import "./styles/style.scss";
+import './firebase/firebase'
 
 const store = configureStore();
-console.log("test");
 
 const jsx = (
   <Provider store={store}>
