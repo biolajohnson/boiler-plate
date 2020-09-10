@@ -1,4 +1,13 @@
-import { addExpense, editExpense, removeExpense, startAddExpense, setExpenses, startSetExpenses } from "../../actions/expenses";
+import {
+  addExpense,
+  editExpense,
+  removeExpense,
+  startAddExpense,
+  setExpenses,
+  startSetExpenses,
+  startRemoveExpense,
+  startEditExpense
+} from "../../actions/expenses";
 import expenses from '../fixtures/expenses'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
@@ -39,7 +48,7 @@ test("Should edit expenses from the store", () => {
     },
   });
 });
-
+//asynchronous test case --> add expense
 test('should add expense to database and store', (done) => {
   const store = createMockStore({})
   const expenseData = {
@@ -64,7 +73,7 @@ test('should add expense to database and store', (done) => {
   })
 })
 
-
+//asynchronous test case --> add expense
 test('should add expense defaults to database and store', (done) => {
   const store = createMockStore({})
   const expenseDefaults = {
@@ -96,7 +105,7 @@ test('should setup set expenses action object with data', () => {
     expenses
   })
 })
-
+//asynchronous test case --> read / fetch expense
 test('should fetch the expenses from firebase', (done) => {
   const store = createMockStore({})
   store.dispatch(startSetExpenses()).then(() => {
@@ -105,6 +114,42 @@ test('should fetch the expenses from firebase', (done) => {
       type: 'SET_EXPENSES',
       expenses
     })
+    done()
+  })
+})
+//asynchronous test case --> remove expense
+test('should remove the expenses from firebase', (done) => {
+  const store = createMockStore({})
+  const id = expenses[2].id
+  store.dispatch(startRemoveExpense({ id })).then(() => {
+    const action = store.getActions()
+    expect(action[0]).toEqual({
+      type: 'REMOVE_EXPENSE',
+      id
+    })
+    return database.ref(`expenses/${id}`).once('value')
+  }).then((snapshot) => {
+    expect(snapshot.val()).toBeFalsy()
+    done()
+  })
+})
+//asynchronous test case --> update expense
+test('should update the expenses from firebase', (done) => {
+  const store = createMockStore({})
+  const id = expenses[1].id
+  const updates = {
+    description: 'noName'
+  }
+  store.dispatch(startEditExpense(id, updates)).then(() => {
+    const action = store.getActions()
+    expect(action[0]).toEqual({
+      type: 'EDIT_EXPENSE',
+      id,
+      updates
+    })
+    return database.ref(`expenses/${id}`).once('value')
+  }).then((snapshot) => {
+    expect(snapshot.val().description).toBe('noName')
     done()
   })
 })

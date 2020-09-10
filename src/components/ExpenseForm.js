@@ -8,7 +8,7 @@ export default class ExpenseForm extends React.Component {
     super(props);
     this.state = {
       description: props.expense ? props.expense.description : "",
-      notes: props.expense ? props.expense.note : "",
+      note: props.expense ? props.expense.note : "",
       amount: props.expense ? (props.expense.amount / 100).toString() : "",
       createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       calenderFocused: false,
@@ -21,8 +21,8 @@ export default class ExpenseForm extends React.Component {
     this.setState(() => ({ description }));
   };
   onNotesChange = (e) => {
-    const notes = e.target.value;
-    this.setState(() => ({ notes }));
+    const note = e.target.value;
+    this.setState(() => ({ note }));
   };
   onAmountChange = (e) => {
     const amount = e.target.value;
