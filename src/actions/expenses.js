@@ -1,4 +1,3 @@
-
 import database from '../firebase/firebase'
 
 //ADD_EXPENSE
@@ -57,8 +56,8 @@ export const startEditExpense = (id, updates) => {
 export const setExpenses = (expenses) => ({
   type: 'SET_EXPENSES',
   expenses
-
 })
+
 export const startSetExpenses = () => {
   //1. fetch all expenses data once
   return (dispatch) => {

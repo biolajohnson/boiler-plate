@@ -116,6 +116,7 @@ exports[`should render error for invalid form input 1`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add your notes here (optional)"
+      value=""
     />
     <button>
       Add Expense
@@ -243,6 +244,7 @@ exports[`should render error for invalid form input 2`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add your notes here (optional)"
+      value=""
     />
     <button>
       Add Expense
@@ -367,6 +369,7 @@ exports[`should render expense form correctly 1`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add your notes here (optional)"
+      value=""
     />
     <button>
       Add Expense
@@ -491,6 +494,7 @@ exports[`should render expense form with date correctly 1`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add your notes here (optional)"
+      value=""
     />
     <button>
       Add Expense
